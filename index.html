@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анжела Погосян | Амбасадор АЯКС</title>
+    
+    <!-- SEO -->
+    <title>Анжела Погосян | Амбасадор АЯКС — новостройки, подбор квартир, онлайн-сделки</title>
+    <meta name="description" content="Анжела Погосян — амбасадор компании АЯКС. Подбор новостроек, полное сопровождение сделок, онлайн-показы. Клубные дома Примавера и HideOUT.">
+    <meta name="keywords" content="новостройки, амбасадор, АЯКС, Анжела Погосян, подбор квартир, ипотека, Примавера, HideOUT, недвижимость">
+    <meta name="author" content="Анжела Погосян">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (превью для соцсетей) -->
+    <meta property="og:title" content="Анжела Погосян | Амбасадор АЯКС">
+    <meta property="og:description" content="Ваш персональный проводник в мире новостроек. Онлайн-сделки, полное сопровождение.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vikaandreevnadesign.github.io/---/">
+    <meta property="og:image" content="https://vikaandreevnadesign.github.io/---/anzhela.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Анжела Погосян",
+        "description": "Амбасадор по новостройкам компании АЯКС",
+        "telephone": "+79381001608",
+        "email": "anzhela@example.com",
+        "url": "https://vikaandreevnadesign.github.io/---/",
+        "image": "https://vikaandreevnadesign.github.io/---/anzhela.jpg",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "АЯКС"
+        }
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -14,8 +48,8 @@
         .header { background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%); color: #fff; padding: 20px 0 60px; }
         .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .logo { background: #fff; color: #c62828; font-weight: 800; font-size: 26px; padding: 8px 20px; border-radius: 6px; letter-spacing: 1px; }
-        .nav { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 15px; transition: opacity 0.2s; }
+        .nav { display: flex; gap: 20px; flex-wrap: wrap; }
+        .nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 14px; transition: opacity 0.2s; }
         .nav a:hover { opacity: 0.8; text-decoration: underline; text-underline-offset: 4px; }
         .hero { display: flex; align-items: center; gap: 40px; padding-top: 40px; flex-wrap: wrap; }
         .hero-text { flex: 1; min-width: 260px; }
@@ -23,7 +57,7 @@
         .hero-text h1 { font-size: 40px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
         .hero-text h2 { font-size: 18px; font-weight: 400; opacity: 0.9; margin-bottom: 16px; }
         .hero-text p { font-size: 15px; opacity: 0.85; margin-bottom: 22px; max-width: 450px; }
-        .btn { display: inline-block; background: #fff; color: #c62828; padding: 14px 30px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .btn { display: inline-block; background: #fff; color: #c62828; padding: 14px 30px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 15px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(0,0,0,0.12); border: none; cursor: pointer; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.18); }
         .hero-photo { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255,255,255,0.4); flex-shrink: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -32,40 +66,61 @@
         section { padding: 65px 0; }
         .section-title { font-size: 30px; font-weight: 700; color: #b71c1c; margin-bottom: 35px; }
         .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: #d32f2f; border-radius: 2px; margin-top: 10px; }
+        .bg-light { background: #fafafa; }
 
-        /* Иконки вместо эмодзи */
+        /* Иконки */
         .icon-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; margin-bottom: 14px; color: #fff; flex-shrink: 0; }
         .icon-red { background: #d32f2f; }
         .icon-dark { background: #b71c1c; }
 
-        /* Преимущества */
+        /* Карточки услуг */
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
         .about-card { background: #fff; padding: 28px 22px; border-radius: 14px; border-top: 4px solid #d32f2f; box-shadow: 0 3px 15px rgba(0,0,0,0.04); transition: transform 0.25s, box-shadow 0.25s; }
         .about-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.07); }
         .about-card h4 { font-size: 17px; margin-bottom: 6px; color: #222; }
         .about-card p { font-size: 14px; color: #666; line-height: 1.5; }
 
+        /* Галерея */
+        .gallery { position: relative; overflow: hidden; border-radius: 16px 16px 0 0; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; display: none; }
+        .gallery img.active { display: block; }
+        .gallery-nav { display: flex; justify-content: center; gap: 10px; padding: 12px; background: #fff; }
+        .gallery-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; border: none; cursor: pointer; transition: background 0.2s; }
+        .gallery-dot.active { background: #d32f2f; }
+
         /* Проекты */
-        .bg-light { background: #fafafa; }
         .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
         @media (max-width: 650px) { .projects-grid { grid-template-columns: 1fr; } }
         .project-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.05); transition: transform 0.25s, box-shadow 0.25s; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-        .project-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
         .card-body { padding: 20px; }
         .card-body h3 { color: #b71c1c; font-size: 20px; margin-bottom: 8px; }
         .card-body p { font-size: 14px; color: #555; line-height: 1.5; }
         .tag { display: inline-block; background: #ffebee; color: #b71c1c; padding: 5px 12px; border-radius: 14px; font-size: 12px; font-weight: 600; margin-top: 10px; }
 
-        /* Почему я */
+        /* Преимущества */
         .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
         .adv-item { display: flex; gap: 14px; align-items: flex-start; }
         .adv-text h4 { font-size: 17px; margin-bottom: 4px; color: #222; }
         .adv-text p { font-size: 14px; color: #666; }
 
         /* Калькулятор */
-        .calc-wrapper { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-top: 30px; }
-        .calc-wrapper iframe { width: 100%; height: 600px; border: none; }
+        .calc-box { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); max-width: 500px; margin: 0 auto; }
+        .calc-box label { display: block; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .calc-box input[type="range"] { width: 100%; margin-bottom: 20px; accent-color: #d32f2f; }
+        .calc-box .row { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 14px; color: #888; }
+        .calc-result { text-align: center; font-size: 28px; font-weight: 700; color: #b71c1c; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+
+        /* Форма */
+        .form-box { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); max-width: 500px; margin: 0 auto; }
+        .form-box input, .form-box textarea { width: 100%; padding: 12px 16px; margin-bottom: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; }
+        .form-box textarea { height: 100px; resize: vertical; }
+        .form-box button { width: 100%; background: #d32f2f; color: #fff; padding: 14px; border: none; border-radius: 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+        .form-box button:hover { background: #b71c1c; }
+        .form-success { display: none; text-align: center; color: #2e7d32; font-weight: 600; padding: 20px; }
+
+        /* Карта */
+        .map-wrapper { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
 
         /* Контакты */
         .contacts { background: #1a1a1a; color: #fff; text-align: center; }
@@ -76,7 +131,6 @@
         .contact-info a:hover { color: #fff; }
         .footer-note { margin-top: 35px; font-size: 13px; opacity: 0.4; }
 
-        /* Мобильная адаптация */
         @media (max-width: 600px) {
             .hero { flex-direction: column-reverse; text-align: center; }
             .hero-photo { width: 140px; height: 140px; }
@@ -96,6 +150,8 @@
                     <a href="#about">Услуги</a>
                     <a href="#projects">Проекты</a>
                     <a href="#calculator">Калькулятор</a>
+                    <a href="#map">Карта</a>
+                    <a href="#form">Заявка</a>
                     <a href="#contacts">Контакты</a>
                 </nav>
             </div>
@@ -105,10 +161,10 @@
                     <h1>Анжела Погосян</h1>
                     <h2>Ваш персональный проводник в мире недвижимости</h2>
                     <p>Онлайн-сделки без границ. Полное сопровождение от выбора квартиры до ключей. Работаю с проектами премиум-класса.</p>
-                    <a href="#contacts" class="btn">Связаться со мной</a>
+                    <a href="#form" class="btn">Оставить заявку</a>
                 </div>
                 <div class="hero-photo">
-                    <img src="anzhela.jpg" alt="Анжела Погосян">
+                    <img src="anzhela.jpg" alt="Анжела Погосян — амбасадор АЯКС">
                 </div>
             </div>
         </div>
@@ -119,45 +175,49 @@
         <div class="container">
             <div class="section-title">Чем я полезна</div>
             <div class="about-grid">
-                <div class="about-card">
-                    <div class="icon-circle icon-red">I</div>
-                    <h4>Подбор новостроек</h4>
-                    <p>Анализирую рынок под ваш бюджет и пожелания. Знаю все актуальные ЖК в регионе.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon-circle icon-dark">II</div>
-                    <h4>Полное сопровождение</h4>
-                    <p>От бронирования до получения ключей. Ипотека, документы, приёмка — беру на себя.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon-circle icon-red">III</div>
-                    <h4>Онлайн-сделки</h4>
-                    <p>Показываю объекты по видео, оформляю дистанционно. Для иногородних и занятых клиентов.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon-circle icon-dark">IV</div>
-                    <h4>Закрытые лоты</h4>
-                    <p>Работаю с базой АЯКС напрямую — знаю о выгодных вариантах раньше других.</p>
-                </div>
+                <div class="about-card"><div class="icon-circle icon-red">I</div><h4>Подбор новостроек</h4><p>Анализирую рынок под ваш бюджет и пожелания. Знаю все актуальные ЖК в регионе.</p></div>
+                <div class="about-card"><div class="icon-circle icon-dark">II</div><h4>Полное сопровождение</h4><p>От бронирования до получения ключей. Ипотека, документы, приёмка — беру на себя.</p></div>
+                <div class="about-card"><div class="icon-circle icon-red">III</div><h4>Онлайн-сделки</h4><p>Показываю объекты по видео, оформляю дистанционно. Для иногородних и занятых клиентов.</p></div>
+                <div class="about-card"><div class="icon-circle icon-dark">IV</div><h4>Закрытые лоты</h4><p>Работаю с базой АЯКС напрямую — знаю о выгодных вариантах раньше других.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ПРОЕКТЫ -->
+    <!-- ПРОЕКТЫ С ГАЛЕРЕЕЙ -->
     <section id="projects" class="bg-light">
         <div class="container">
             <div class="section-title">Новостройки в работе</div>
             <div class="projects-grid">
+                <!-- Примавера -->
                 <div class="project-card">
-                    <img src="primavista.jpg" alt="Примавера">
+                    <div class="gallery" id="gallery1">
+                        <img src="primavista.jpg" alt="ЖК Примавера — фасад" class="active">
+                        <img src="primavista.jpg" alt="ЖК Примавера — двор">
+                        <img src="primavista.jpg" alt="ЖК Примавера — планировка">
+                    </div>
+                    <div class="gallery-nav">
+                        <button class="gallery-dot active" onclick="switchSlide('gallery1', 0, this)"></button>
+                        <button class="gallery-dot" onclick="switchSlide('gallery1', 1, this)"></button>
+                        <button class="gallery-dot" onclick="switchSlide('gallery1', 2, this)"></button>
+                    </div>
                     <div class="card-body">
-                        <h3>Primavera</h3>
-                        <p>Клубный город на реке. Закрытая территория, панорамные виды, архитектура премиум-класса.</p>
+                        <h3>Примавера</h3>
+                        <p>Клубный город на берегу. Закрытая территория, панорамные виды, архитектура премиум-класса.</p>
                         <span class="tag">Клубный дом</span>
                     </div>
                 </div>
+                <!-- HideOUT -->
                 <div class="project-card">
-                    <img src="socialhub.jpg" alt="HideOUT">
+                    <div class="gallery" id="gallery2">
+                        <img src="socialhub.jpg" alt="HideOUT — лаунж-зона" class="active">
+                        <img src="socialhub.jpg" alt="HideOUT — спортзал">
+                        <img src="socialhub.jpg" alt="HideOUT — детская зона">
+                    </div>
+                    <div class="gallery-nav">
+                        <button class="gallery-dot active" onclick="switchSlide('gallery2', 0, this)"></button>
+                        <button class="gallery-dot" onclick="switchSlide('gallery2', 1, this)"></button>
+                        <button class="gallery-dot" onclick="switchSlide('gallery2', 2, this)"></button>
+                    </div>
                     <div class="card-body">
                         <h3>HideOUT</h3>
                         <p>Внутренняя инфраструктура на 22 этаже: 16 зон для отдыха, работы, спорта и детей. Клубный формат доступа.</p>
@@ -173,45 +233,60 @@
         <div class="container">
             <div class="section-title">Почему выбирают меня</div>
             <div class="adv-grid">
-                <div class="adv-item">
-                    <div class="icon-circle icon-red" style="width:42px;height:42px;font-size:18px;">&#10003;</div>
-                    <div class="adv-text">
-                        <h4>Безопасные онлайн-сделки</h4>
-                        <p>Электронная регистрация, защищённые платежи — всё официально через АЯКС.</p>
-                    </div>
-                </div>
-                <div class="adv-item">
-                    <div class="icon-circle icon-dark" style="width:42px;height:42px;font-size:18px;">&#9733;</div>
-                    <div class="adv-text">
-                        <h4>Команда профессионалов</h4>
-                        <p>За мной — юристы, ипотечные брокеры и отдел клиентского сервиса.</p>
-                    </div>
-                </div>
-                <div class="adv-item">
-                    <div class="icon-circle icon-red" style="width:42px;height:42px;font-size:18px;">&infin;</div>
-                    <div class="adv-text">
-                        <h4>На связи 24/7</h4>
-                        <p>Отвечаю быстро в мессенджерах, провожу показы в удобное вам время.</p>
-                    </div>
-                </div>
-                <div class="adv-item">
-                    <div class="icon-circle icon-dark" style="width:42px;height:42px;font-size:18px;">&#9830;</div>
-                    <div class="adv-text">
-                        <h4>Экономия вашего времени</h4>
-                        <p>Отсеиваю неподходящие варианты, показываю только лучшее по вашим критериям.</p>
-                    </div>
-                </div>
+                <div class="adv-item"><div class="icon-circle icon-red" style="width:42px;height:42px;font-size:18px;">&#10003;</div><div class="adv-text"><h4>Безопасные онлайн-сделки</h4><p>Электронная регистрация, защищённые платежи — всё официально через АЯКС.</p></div></div>
+                <div class="adv-item"><div class="icon-circle icon-dark" style="width:42px;height:42px;font-size:18px;">&#9733;</div><div class="adv-text"><h4>Команда профессионалов</h4><p>За мной — юристы, ипотечные брокеры и отдел клиентского сервиса.</p></div></div>
+                <div class="adv-item"><div class="icon-circle icon-red" style="width:42px;height:42px;font-size:18px;">&infin;</div><div class="adv-text"><h4>На связи 24/7</h4><p>Отвечаю быстро в мессенджерах, провожу показы в удобное вам время.</p></div></div>
+                <div class="adv-item"><div class="icon-circle icon-dark" style="width:42px;height:42px;font-size:18px;">&#9830;</div><div class="adv-text"><h4>Экономия вашего времени</h4><p>Отсеиваю неподходящие варианты, показываю только лучшее по вашим критериям.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ИПОТЕЧНЫЙ КАЛЬКУЛЯТОР -->
+    <!-- ИПОТЕЧНЫЙ КАЛЬКУЛЯТОР (СВОЙ) -->
     <section id="calculator" class="bg-light">
         <div class="container">
             <div class="section-title">Ипотечный калькулятор</div>
-            <p style="margin-bottom:20px;color:#555;">Рассчитайте примерный ежемесячный платёж по ипотеке</p>
-            <div class="calc-wrapper">
-                <iframe src="https://calcus.ru/kalkulyator-ipoteki?embed=1" title="Ипотечный калькулятор"></iframe>
+            <div class="calc-box">
+                <label>Стоимость квартиры: <strong id="priceVal">6 000 000 ₽</strong></label>
+                <input type="range" id="price" min="1000000" max="30000000" value="6000000" step="100000" oninput="calc()">
+                <div class="row"><span>1 млн</span><span>30 млн</span></div>
+
+                <label>Первоначальный взнос: <strong id="downVal">1 200 000 ₽</strong></label>
+                <input type="range" id="down" min="0" max="15000000" value="1200000" step="100000" oninput="calc()">
+                <div class="row"><span>0 ₽</span><span>15 млн</span></div>
+
+                <label>Срок кредита: <strong id="yearsVal">20 лет</strong></label>
+                <input type="range" id="years" min="1" max="30" value="20" step="1" oninput="calc()">
+                <div class="row"><span>1 год</span><span>30 лет</span></div>
+
+                <label>Ставка: <strong id="rateVal">10%</strong></label>
+                <input type="range" id="rate" min="1" max="25" value="10" step="0.1" oninput="calc()">
+                <div class="row"><span>1%</span><span>25%</span></div>
+
+                <div class="calc-result">Ежемесячный платёж: <span id="monthly">46 326 ₽</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОРМА ЗАЯВКИ -->
+    <section id="form">
+        <div class="container">
+            <div class="section-title">Оставить заявку</div>
+            <div class="form-box" id="formBox">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="tel" id="phone" placeholder="Телефон" required>
+                <textarea id="message" placeholder="Какой проект интересует?"></textarea>
+                <button onclick="sendForm()">Отправить</button>
+            </div>
+            <div class="form-success" id="formSuccess">Спасибо! Анжела свяжется с вами в ближайшее время.</div>
+        </div>
+    </section>
+
+    <!-- КАРТА -->
+    <section id="map" class="bg-light">
+        <div class="container">
+            <div class="section-title">Офисы продаж</div>
+            <div class="map-wrapper">
+                <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1095444539" width="100%" height="400" style="border:0;" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -224,11 +299,31 @@
                 <span>&#9742; <a href="tel:+79381001608">+7 (938) 100-16-08</a></span>
                 <span>&#9993; <a href="mailto:anzhela@example.com">anzhela@example.com</a></span>
             </div>
-            <a href="https://wa.me/79381001608?text=Здравствуйте,%20Анжела!%20Интересуют%20новостройки%20АЯКС." class="btn" style="background:#25D366;color:#fff;margin-top:15px;" target="_blank">Написать в WhatsApp</a>
+            <a href="https://wa.me/79381001608?text=Здравствуйте,%20Анжела!%20Интересуют%20новостройки%20АЯКС." class="btn" style="background:#25D366;color:#fff;" target="_blank">Написать в WhatsApp</a>
             <p style="margin-top:20px;opacity:0.7;">Работаю по всем регионам присутствия АЯКС</p>
             <div class="footer-note">&copy; 2026 Анжела Погосян | Амбасадор АЯКС</div>
         </div>
     </section>
 
-</body>
-</html>
+    <script>
+        // Галерея
+        function switchSlide(galleryId, index, dot) {
+            const gallery = document.getElementById(galleryId);
+            const slides = gallery.querySelectorAll('img');
+            const dots = gallery.parentElement.querySelectorAll('.gallery-dot');
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        // Калькулятор
+        function calc() {
+            const price = +document.getElementById('price').value;
+            const down = +document.getElementById('down').value;
+            const years = +document.getElementById('years').value;
+            const rate = +document.getElementById('rate').value;
+            const loan = price - down;
+            const months = years * 12;
+            const monthlyRate = rate / 100 / 12;
+            let
