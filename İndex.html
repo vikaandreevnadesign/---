@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анжела Погосян | Амбасадор АЯКС</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* header */
+        .header {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 28px;
+            letter-spacing: 1px;
+            background: #fff;
+            color: #c62828;
+            padding: 8px 20px;
+            border-radius: 6px;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 40px 0 60px;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-text .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .hero-text h2 {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 16px;
+            opacity: 0.85;
+            max-width: 450px;
+            margin-bottom: 24px;
+        }
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #c62828;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.25s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            background: #f5f5f5;
+        }
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #fff;
+            border: 4px solid rgba(255,255,255,0.4);
+            flex-shrink: 0;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .hero-photo span {
+            font-weight: 300;
+            font-size: 50px;
+        }
+        /* about */
+        .about {
+            padding: 70px 0;
+            background: #fafafa;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            color: #b71c1c;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #d32f2f;
+            border-radius: 2px;
+            margin-top: 8px;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .about-card {
+            background: #fff;
+            padding: 30px 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 4px solid #d32f2f;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .about-card .icon-emoji {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .about-card h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .about-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        /* projects */
+        .projects {
+            padding: 70px 0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 700px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .project-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+        .project-card .card-body {
+            padding: 20px;
+        }
+        .project-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #b71c1c;
+            margin-bottom: 8px;
+        }
+        .project-card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .tag {
+            display: inline-block;
+            background: #ffebee;
+            color: #b71c1c;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        /* advantages */
+        .advantages {
+            padding: 70px 0;
+            background: #fafafa;
+        }
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .adv-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .adv-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        .adv-text h4 {
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 4px;
+            color: #222;
+        }
+        .adv-text p {
+            font-size: 14px;
+            color: #666;
+        }
+        /* contacts */
+        .contacts {
+            padding: 70px 0;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+        .contacts .section-title {
+            color: #fff;
+        }
+        .contacts .section-title::after {
+            background: #d32f2f;
+        }
+        .contact-info {
+            font-size: 18px;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .contact-info a {
+            color: #ff8a80;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: #fff;
+        }
+        .footer-note {
+            margin-top: 35px;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+        /* responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            .hero-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 45px;
+            }
+            .nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">АЯКС</div>
+                <nav class="nav">
+                    <a href="#">Главная</a>
+                    <a href="#">Проекты</a>
+                    <a href="#">Контакты</a>
+                </nav>
+            </div>
+            <div class="hero">
+                <div class="hero-text">
+                    <div class="badge">Амбасадор по новостройкам</div>
+                    <h1>Анжела<br>Погосян</h1>
+                    <h2>Ваш персональный проводник в мире недвижимости</h2>
+                    <p>Онлайн-сделки без границ. Полное сопровождение от выбора квартиры до ключей. Работаю с проектами премиум-класса.</p>
+                    <a href="#" class="btn">Получить консультацию</a>
+                </div>
+                <div class="hero-photo">
+                    <span>👩🏻‍💼</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-title">Чем я полезна</div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon-emoji">🏠</div>
+                    <h4>Подбор новостроек</h4>
+                    <p>Анализирую рынок под ваш бюджет и пожелания. Знаю все актуальные ЖК в регионе.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-emoji">📋</div>
+                    <h4>Полное сопровождение</h4>
+                    <p>От бронирования до получения ключей. Ипотека, документы, приемка — беру на себя.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-emoji">🌐</div>
+                    <h4>Онлайн-сделки</h4>
+                    <p>Показываю объекты по видео, оформляю дистанционно. Для иногородних и занятых клиентов.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-emoji">🔑</div>
+                    <h4>Доступ к закрытым лотам</h4>
+                    <p>Работаю с базой компании АЯКС напрямую — знаю о выгодных вариантах раньше других.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <div class="section-title">Новостройки в работе</div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='240'%3E%3Crect fill='%23b71c1c' width='600' height='240'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3EPrimavista%3C/text%3E%3C/svg%3E" alt="Primavista">
+                    <div class="card-body">
+                        <h3>Primavista</h3>
+                        <p>Клубный город на берегу. Закрытая территория, панорамные виды, архитектура премиум-класса.</p>
+                        <span class="tag">Клубный дом</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='240'%3E%3Crect fill='%23c62828' width='600' height='240'/%3E%3Ctext x='50%25' y='50%25' font-size='28' font-weight='bold' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3ESocialHUB%3C/text%3E%3C/svg%3E" alt="SocialHUB">
+                    <div class="card-body">
+                        <h3>SocialHUB</h3>
+                        <p>Внутренняя инфраструктура на 22 этаже: 16 зон отдыха, коворкинг, спорт, детские пространства, клубный формат доступа.</p>
+                        <span class="tag">Клубная инфраструктура</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <div class="section-title">Почему выбирают меня</div>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <div class="adv-icon">⚡</div>
+                    <div class="adv-text">
+                        <h4>Безопасные онлайн-сделки</h4>
+                        <p>Электронная регистрация, защищенные платежи — всё официально через АЯКС.</p>
+                    </div>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-icon">🤝</div>
+                    <div class="adv-text">
+                        <h4>Команда профессионалов</h4>
+                        <p>За мной — юристы, ипотечные брокеры и отдел клиентского сервиса.</p>
+                    </div>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-icon">📱</div>
+                    <div class="adv-text">
+                        <h4>На связи 24/7</h4>
+                        <p>Отвечаю быстро в мессенджерах, провожу показы в удобное вам время.</p>
+                    </div>
+                </div>
+                <div class="adv-item">
+                    <div class="adv-icon">🎯</div>
+                    <div class="adv-text">
+                        <h4>Экономия вашего времени</h4>
+                        <p>Отсеиваю неподходящие варианты, показываю только лучшее по критериям.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts">
+        <div class="container">
+            <div class="section-title">Контакты</div>
+            <div class="contact-info">
+                <span>📞 <a href="#">+77777777777</a></span>
+                <span>💬 <a href="#">Telegram</a></span>
+                <span>📲 <a href="#">WhatsApp</a></span>
+                <span>✉️ <a href="#">anzhela@example.com</a></span>
+            </div>
+            <p style="margin-top:20px; opacity:0.8;">Работаю по всем регионам присутствия АЯКС</p>
+            <div class="footer-note">© 2026 Анжела Погосян | Амбасадор АЯКС</div>
+        </div>
+    </section>
+</body>
+  </html>
