@@ -18,108 +18,115 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#1A2F26;color:#E8E0D5;line-height:1.6;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#1A2F26;color:#2C2416;line-height:1.6;overflow-x:hidden}
 
-:root{--green:#1A2F26;--beige:#D4C5B2;--blue:#1B3A5C;--gold:#C8A052;--text:#E8E0D5;--muted:rgba(232,224,213,0.7);--card:rgba(255,255,255,0.04)}
+:root{--green:#1A2F26;--beige:#F5F0E8;--blue:#1B3A5C;--gold:#B8943A;--text-dark:#2C2416;--text-light:#E8E0D5;--muted-dark:rgba(44,36,22,0.7);--muted-light:rgba(232,224,213,0.7)}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
-nav.scrolled{background:rgba(26,47,38,0.95);border-bottom:1px solid rgba(200,160,82,0.2);backdrop-filter:blur(10px)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:1px}
-.nav-links{display:flex;gap:24px}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;background:#1A2F26}
+nav.scrolled{border-bottom:1px solid rgba(184,148,58,0.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--gold);text-decoration:none;letter-spacing:1px}
+.nav-links{display:flex;gap:22px}
+.nav-links a{text-decoration:none;color:var(--muted-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--gold)}
-.nav-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:20px;text-decoration:none;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s}
-.nav-btn:hover{background:rgba(200,160,82,0.1)}
+.nav-btn{background:var(--gold);color:#fff;padding:8px 18px;border-radius:20px;text-decoration:none;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;font-weight:600}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(184,148,58,0.3)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 60px 60px;position:relative;overflow:hidden;background:linear-gradient(135deg,#1A2F26 0%,#1A2F26 55%,#243B30 100%)}
-.hero-bg-pattern{position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at center,rgba(27,58,92,0.12) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
-.hero-badge{display:inline-block;border:1px solid rgba(200,160,82,0.4);padding:8px 18px;border-radius:30px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:20px}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;padding:100px 40px 60px;position:relative;overflow:hidden;background:url('socialhub.jpg') center/cover no-repeat;background-attachment:fixed}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(26,47,38,0.75);z-index:0}
+.hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-text{color:#fff}
+.hero-badge{display:inline-block;border:1px solid rgba(184,148,58,0.5);padding:8px 18px;border-radius:30px;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,50px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:16px}
 h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:28px;max-width:440px}
-.hero-stats{display:flex;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:24px;max-width:420px}
+.hero-stats{display:flex;gap:28px;margin-bottom:28px;flex-wrap:wrap}
 .stat-item{text-align:center}
-.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:var(--gold);line-height:1}
-.stat-label{font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px}
-.btn-gold{display:inline-block;background:var(--gold);color:#1A2F26;padding:14px 32px;border-radius:30px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,160,82,0.3)}
-.hero-photo-wrap{display:flex;justify-content:center;align-items:center}
-.hero-photo{width:340px;height:440px;border-radius:20px;overflow:hidden;border:2px solid rgba(200,160,82,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:600;color:var(--gold);line-height:1}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px}
+.btn-gold{display:inline-block;background:var(--gold);color:#fff;padding:14px 32px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,148,58,0.3)}
+.hero-photo{width:320px;height:420px;border-radius:20px;overflow:hidden;border:2px solid rgba(184,148,58,0.3);margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
 
 /* SECTION */
-.sec{max-width:1100px;margin:0 auto;padding:80px 40px}
-.sec-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec{padding:70px 40px}
+.sec-beige{background:var(--beige)}
+.sec-green{background:#1A2F26}
+.sec-blue{background:var(--blue)}
+.sec-container{max-width:1100px;margin:0 auto}
+.sec-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .sec-label::before{content:'';width:20px;height:1px;background:var(--gold);display:block}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:600;color:#fff;line-height:1.15;margin-bottom:40px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;line-height:1.15;margin-bottom:36px}
+.sec-green .sec-title,.sec-blue .sec-title{color:#fff}
+.sec-beige .sec-title{color:#2C2416}
 .sec-title em{font-style:italic;color:var(--gold)}
 
 /* SERVICES GRID */
-.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.srv-card{background:rgba(255,255,255,0.03);border:1px solid rgba(200,160,82,0.12);border-radius:16px;padding:28px 24px;transition:all 0.3s;position:relative;overflow:hidden}
-.srv-card:hover{border-color:rgba(200,160,82,0.4);background:rgba(255,255,255,0.05);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.3)}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.srv-card{background:#fff;border:1px solid rgba(184,148,58,0.2);border-radius:14px;padding:26px 22px;transition:all 0.3s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.srv-card:hover{border-color:rgba(184,148,58,0.5);transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,0.08)}
 .srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s}
 .srv-card:hover::before{opacity:1}
-.srv-icon{font-size:24px;margin-bottom:14px;color:var(--gold)}
-.srv-card h4{font-size:16px;font-weight:600;margin-bottom:8px;color:#fff}
-.srv-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.srv-icon{font-size:20px;margin-bottom:10px;color:var(--gold)}
+.srv-card h4{font-size:15px;font-weight:600;margin-bottom:6px;color:#2C2416}
+.srv-card p{font-size:12px;color:rgba(44,36,22,0.65);line-height:1.7}
 
 /* MAP */
-.map-section{background:rgba(27,58,92,0.08);border:1px solid rgba(200,160,82,0.1);border-radius:20px;padding:50px 40px;text-align:center;position:relative;overflow:hidden}
-.map-section::before{content:'';position:absolute;inset:0;background:url('socialhub.jpg') center/cover no-repeat;opacity:0.08;z-index:0}
-.map-section>*{position:relative;z-index:1}
-.map-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);margin-bottom:30px}
-.map-dots{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:20px}
-.map-dot{padding:12px 22px;border:1px solid rgba(200,160,82,0.25);border-radius:30px;font-size:12px;letter-spacing:0.05em;color:var(--text);transition:all 0.4s;cursor:default;background:rgba(0,0,0,0.2);animation:pulse 2.5s ease-in-out infinite}
-.map-dot:nth-child(odd){animation-delay:0.5s}
-.map-dot:nth-child(3n){animation-delay:1s}
-.map-dot:hover{border-color:var(--gold);background:rgba(200,160,82,0.15);transform:translateY(-3px);box-shadow:0 8px 20px rgba(200,160,82,0.2);animation:none}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,160,82,0.2)}50%{box-shadow:0 0 0 8px rgba(200,160,82,0)}}
-.map-sub{font-size:12px;color:var(--muted);margin-top:16px}
+.map-card{background:#fff;border:1px solid rgba(184,148,58,0.2);border-radius:16px;padding:40px 30px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+.map-title{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold);margin-bottom:24px}
+.map-dots{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:16px}
+.map-dot{padding:10px 20px;border:1px solid rgba(184,148,58,0.3);border-radius:30px;font-size:11px;letter-spacing:0.04em;color:#2C2416;transition:all 0.4s;cursor:default;animation:pulse 2.5s ease-in-out infinite}
+.map-dot:nth-child(even){animation-delay:0.6s}
+.map-dot:nth-child(3n){animation-delay:1.2s}
+.map-dot:hover{border-color:var(--gold);background:rgba(184,148,58,0.1);transform:translateY(-3px);box-shadow:0 6px 18px rgba(184,148,58,0.2);animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(184,148,58,0.15)}50%{box-shadow:0 0 0 8px rgba(184,148,58,0)}}
+.map-sub{font-size:11px;color:rgba(44,36,22,0.5);margin-top:12px}
 
 /* CALC */
-.calc-wrap{background:rgba(27,58,92,0.08);border:1px solid rgba(200,160,82,0.1);border-radius:20px;padding:40px;text-align:center}
-.calc-wrap iframe{width:100%;height:450px;border:none;border-radius:14px;background:#fff}
-.calc-disclaimer{font-size:11px;color:var(--muted);margin-top:16px;line-height:1.6}
-.calc-tg-btn{display:inline-block;margin-top:14px;background:var(--gold);color:#1A2F26;padding:12px 28px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s}
-.calc-tg-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(200,160,82,0.3)}
+.calc-card{background:#fff;border:1px solid rgba(184,148,58,0.2);border-radius:16px;padding:30px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+.calc-card iframe{width:100%;height:420px;border:none;border-radius:12px;background:#fff}
+.calc-disclaimer{font-size:10px;color:rgba(44,36,22,0.5);margin-top:14px;line-height:1.6}
+.calc-tg-btn{display:inline-block;margin-top:12px;background:var(--gold);color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s}
+.calc-tg-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(184,148,58,0.3)}
 
 /* CONTACTS */
-.contacts{background:#152A23;padding:60px 40px;text-align:center}
-.contact-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:30px 0}
-.contact-card{background:rgba(27,58,92,0.15);border:1px solid rgba(200,160,82,0.12);border-radius:14px;padding:20px 24px;min-width:150px;transition:all 0.2s;text-decoration:none;color:var(--text);display:block}
-.contact-card:hover{border-color:var(--gold);transform:translateY(-2px)}
-.contact-card .c-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:18px}
-.contact-card .c-name{font-size:12px;font-weight:600;color:var(--gold);margin-bottom:2px}
-.contact-card .c-val{font-size:11px;color:var(--muted)}
+.contacts{background:var(--blue);padding:60px 40px;text-align:center;color:#fff}
+.contact-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:28px 0}
+.contact-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:12px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.05em;transition:all 0.2s;min-width:140px;justify-content:center}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+.contact-btn.tg{background:#2AABEE;color:#fff}
+.contact-btn.wa{background:#25D366;color:#fff}
+.contact-btn.phone{background:#F5A623;color:#fff}
+.contact-btn.insta{background:#E1306C;color:#fff}
+.contact-btn .btn-icon{font-size:18px}
 
 /* FOOTER */
-.footer-note{font-size:11px;color:var(--muted);opacity:0.5;margin-top:20px}
+.footer-note{font-size:10px;color:rgba(255,255,255,0.4);margin-top:20px}
 
 /* MOBILE */
 @media(max-width:800px){
-  nav{padding:14px 20px}
+  nav{padding:12px 20px}
   .nav-links{display:none}
-  .hero{padding:90px 20px 40px}
-  .hero-inner{grid-template-columns:1fr;gap:36px;text-align:center}
-  .hero-photo{width:240px;height:320px;margin:0 auto}
+  .hero{min-height:auto;padding:90px 20px 40px;background-attachment:scroll}
+  .hero-inner{grid-template-columns:1fr;gap:30px;text-align:center}
+  .hero-photo{width:220px;height:300px}
   .hero-stats{justify-content:center}
   .sec{padding:50px 20px}
   .srv-grid{grid-template-columns:1fr}
-  .map-section,.calc-wrap{padding:30px 20px}
-  .calc-wrap iframe{height:380px}
-  .contact-grid{gap:12px}
-  .contact-card{min-width:130px;padding:16px}
+  .calc-card iframe{height:350px}
+  .contact-btn{min-width:120px;padding:12px 18px;font-size:11px}
 }
 @media(max-width:480px){
-  h1{font-size:28px}
-  .hero-photo{width:200px;height:270px}
-  .map-dots{gap:8px}
+  .hero-photo{width:180px;height:250px}
+  h1{font-size:26px}
+  .hero-stats{gap:16px}
+  .stat-num{font-size:26px}
   .map-dot{padding:8px 14px;font-size:10px}
-  .calc-wrap iframe{height:320px}
+  .calc-card iframe{height:300px}
+  .contact-grid{gap:10px}
+  .contact-btn{min-width:100px;padding:10px 14px;font-size:10px}
 }
 </style>
 </head>
@@ -136,11 +143,10 @@ h1 em{font-style:italic;color:var(--gold)}
   <a href="#contacts" class="nav-btn">Связаться</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (фото SocialHub фоном) -->
 <section class="hero" id="top">
-  <div class="hero-bg-pattern"></div>
   <div class="hero-inner">
-    <div>
+    <div class="hero-text">
       <div class="hero-badge">Эксперт по недвижимости</div>
       <h1>Ваш проводник<br>в мире <em>недвижимости</em></h1>
       <p class="hero-sub">Новостройки, вторичный рынок, ипотека и сделки под ключ. Москва, регионы России и зарубеж — подберу идеальный вариант под ваш запрос.</p>
@@ -152,91 +158,81 @@ h1 em{font-style:italic;color:var(--gold)}
       </div>
       <a href="#contacts" class="btn-gold">Получить консультацию</a>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="hero-photo"><img src="foto.jpg" alt="Анжела Погосян"></div>
+    <div class="hero-photo"><img src="foto.jpg" alt="Анжела Погосян"></div>
+  </div>
+</section>
+
+<!-- SERVICES (бежевый) -->
+<section class="sec sec-beige" id="services">
+  <div class="sec-container">
+    <div class="sec-label">Услуги</div>
+    <h2 class="sec-title">Чем я <em>помогаю</em></h2>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Новостройки</h4><p>Подбор квартир от надёжных застройщиков Москвы и регионов. Скидки, акции и специальные предложения — то, о чём не пишут в открытых источниках.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Вторичный рынок</h4><p>Продадим вашу квартиру по приятной цене или найдём идеальный вариант для покупки. Альтернативные сделки, обмен, трейд-ин.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Ипотека и рассрочка</h4><p>Помощь в одобрении ипотеки. Работаю со всеми крупными банками. Рассрочка от застройщика — подберу вариант с минимальной переплатой.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Сделки под ключ</h4><p>Полное сопровождение от первого звонка до получения ключей. Показываю, объясняю, проверяю документы. Вам остаётся только наслаждаться результатом.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Загородная недвижимость</h4><p>Дома, коттеджи, таунхаусы, участки и ИЖС. Элитные посёлки и доступные варианты. Организую просмотр, проверю коммуникации и документы.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Юридическое сопровождение</h4><p>Проверка документов, чистота сделки, защита ваших интересов. Работаю с проверенными юристами — вы спите спокойно.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Коммерческая недвижимость</h4><p>Офисы, склады, помещения под бизнес. Подбор, анализ окупаемости, проверка назначения. Для инвесторов и предпринимателей.</p></div>
+      <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Объекты под инвестиции</h4><p>Недвижимость для сохранения и приумножения капитала. Россия, ОАЭ, Турция, Таиланд — показываю, где купить с максимальной выгодой.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<div class="sec" id="services">
-  <div class="sec-label">Услуги</div>
-  <h2 class="sec-title">Чем я <em>помогаю</em></h2>
-  <div class="srv-grid">
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Новостройки</h4><p>Подбор квартир от надёжных застройщиков Москвы и регионов. Скидки, акции и специальные предложения — то, о чём не пишут в открытых источниках. Доступ к закрытым стартам продаж.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Вторичный рынок</h4><p>Продадим вашу квартиру по приятной цене или найдём идеальный вариант для покупки. Альтернативные сделки, обмен, трейд-ин — бережно и без стресса.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Ипотека и рассрочка</h4><p>Помощь в одобрении ипотеки даже в сложных случаях. Работаю со всеми крупными банками. Рассрочка от застройщика — подберу вариант с минимальной переплатой.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Сделки под ключ</h4><p>Полное сопровождение от первого звонка до получения ключей. Показываю, объясняю, проверяю документы. Вам остаётся только наслаждаться результатом.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Загородная недвижимость</h4><p>Дома, коттеджи, таунхаусы, участки и ИЖС. Элитные посёлки и доступные варианты. Организую просмотр, проверю коммуникации и документы.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Юридическое сопровождение</h4><p>Проверка документов, чистота сделки, защита ваших интересов. Работаю с проверенными юристами — вы спите спокойно.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Коммерческая недвижимость</h4><p>Офисы, склады, помещения под бизнес. Подбор, анализ окупаемости, проверка назначения. Для инвесторов и предпринимателей.</p></div>
-    <div class="srv-card"><div class="srv-icon">&#9654;</div><h4>Объекты под инвестиции</h4><p>Недвижимость для сохранения и приумножения капитала. Россия, ОАЭ, Турция, Таиланд — показываю, где купить с максимальной выгодой.</p></div>
-  </div>
-</div>
-
-<!-- REGIONS -->
-<div class="sec" id="map">
-  <div class="sec-label">География</div>
-  <h2 class="sec-title">Регионы <em>присутствия</em></h2>
-  <div class="map-section">
-    <div class="map-title">Россия и мир</div>
-    <div class="map-dots">
-      <span class="map-dot">Москва и МО</span>
-      <span class="map-dot">Краснодарский край</span>
-      <span class="map-dot">Крым</span>
-      <span class="map-dot">ЮФО</span>
-      <span class="map-dot">Санкт-Петербург</span>
-      <span class="map-dot">Армения</span>
-      <span class="map-dot">Грузия</span>
-      <span class="map-dot">Турция</span>
-      <span class="map-dot">ОАЭ</span>
-      <span class="map-dot">Таиланд</span>
-      <span class="map-dot">Бали</span>
+<!-- MAP (зелёный) -->
+<section class="sec sec-green" id="map">
+  <div class="sec-container">
+    <div class="sec-label">География</div>
+    <h2 class="sec-title">Регионы <em>присутствия</em></h2>
+    <div class="map-card">
+      <div class="map-title">Россия и мир</div>
+      <div class="map-dots">
+        <span class="map-dot">Москва и МО</span>
+        <span class="map-dot">Краснодарский край</span>
+        <span class="map-dot">Крым</span>
+        <span class="map-dot">ЮФО</span>
+        <span class="map-dot">Санкт-Петербург</span>
+        <span class="map-dot">Армения</span>
+        <span class="map-dot">Грузия</span>
+        <span class="map-dot">Турция</span>
+        <span class="map-dot">ОАЭ</span>
+        <span class="map-dot">Таиланд</span>
+        <span class="map-dot">Бали</span>
+      </div>
+      <p class="map-sub">30+ регионов России &middot; 5+ стран мира</p>
     </div>
-    <p class="map-sub">30+ регионов России &middot; 5+ стран мира</p>
   </div>
-</div>
+</section>
 
-<!-- CALCULATOR -->
-<div class="sec" id="calc">
-  <div class="sec-label">Ипотека</div>
-  <h2 class="sec-title">Рассчитайте <em>платёж</em></h2>
-  <div class="calc-wrap">
-    <iframe src="https://calcus.ru/kalkulyator-ipoteki?embed=1" title="Ипотечный калькулятор"></iframe>
-    <p class="calc-disclaimer">Расчёт является примерным и не является публичной офертой.</p>
-    <a href="https://t.me/Angela_Pogosian" class="calc-tg-btn" target="_blank">Задать вопрос в Telegram</a>
+<!-- CALC (бежевый) -->
+<section class="sec sec-beige" id="calc">
+  <div class="sec-container">
+    <div class="sec-label">Ипотека</div>
+    <h2 class="sec-title">Рассчитайте <em>платёж</em></h2>
+    <div class="calc-card">
+      <iframe src="https://calcus.ru/kalkulyator-ipoteki?embed=1" title="Ипотечный калькулятор"></iframe>
+      <p class="calc-disclaimer">Расчёт является примерным и не является публичной офертой.</p>
+      <a href="https://t.me/Angela_Pogosian" class="calc-tg-btn" target="_blank">Задать вопрос в Telegram</a>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- CONTACTS -->
-<div class="contacts" id="contacts">
-  <div class="sec-label" style="justify-content:center">Контакты</div>
-  <h2 class="sec-title" style="color:#fff">Свяжитесь со <em>мной</em></h2>
-  <div class="contact-grid">
-    <a href="tel:+79381001608" class="contact-card">
-      <div class="c-icon" style="background:#2ecc71;">&#9742;</div>
-      <div class="c-name">Телефон</div>
-      <div class="c-val">Позвонить</div>
-    </a>
-    <a href="https://t.me/Angela_Pogosian" class="contact-card" target="_blank">
-      <div class="c-icon" style="background:#0088cc;">&#9993;</div>
-      <div class="c-name">Telegram</div>
-      <div class="c-val">Написать</div>
-    </a>
-    <a href="https://wa.me/79381001608" class="contact-card" target="_blank">
-      <div class="c-icon" style="background:#25D366;">&#9742;</div>
-      <div class="c-name">WhatsApp</div>
-      <div class="c-val">Написать</div>
-    </a>
-    <a href="https://instagram.com/_anzhelika_359" class="contact-card" target="_blank">
-      <div class="c-icon" style="background:#E1306C;">&#9737;</div>
-      <div class="c-name">Instagram</div>
-      <div class="c-val">Подписаться</div>
-    </a>
+<!-- CONTACTS (синий) -->
+<section class="contacts" id="contacts">
+  <div class="sec-container">
+    <div class="sec-label" style="justify-content:center;color:var(--gold)">Контакты</div>
+    <h2 class="sec-title" style="color:#fff">Свяжитесь со <em>мной</em></h2>
+    <div class="contact-grid">
+      <a href="https://t.me/Angela_Pogosian" class="contact-btn tg" target="_blank"><span class="btn-icon">&#9993;</span>Telegram</a>
+      <a href="https://wa.me/79381001608" class="contact-btn wa" target="_blank"><span class="btn-icon">&#9742;</span>WhatsApp</a>
+      <a href="tel:+79381001608" class="contact-btn phone"><span class="btn-icon">&#9742;</span>Позвонить</a>
+      <a href="https://instagram.com/_anzhelika_359" class="contact-btn insta" target="_blank"><span class="btn-icon">&#9737;</span>Instagram</a>
+    </div>
+    <p style="color:rgba(255,255,255,0.6);font-size:12px;margin-top:8px">Москва</p>
+    <div class="footer-note">&copy; 2026 Анжела Погосян | Эксперт по недвижимости</div>
   </div>
-  <p style="color:var(--muted);font-size:13px;margin-top:10px">Москва</p>
-  <div class="footer-note">&copy; 2026 Анжела Погосян | Эксперт по недвижимости</div>
-</div>
+</section>
 
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
