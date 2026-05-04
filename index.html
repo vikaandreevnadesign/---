@@ -6,315 +6,291 @@
 
 <title>Анжела Погосян — эксперт по недвижимости</title>
 
-<meta name="description" content="Анжела Погосян — эксперт по недвижимости. Подбор, покупка и инвестиции в России и за рубежом. Ипотека, новостройки, сделки под ключ.">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
---green:#0c2b24;
---beige:#f3ede4;
---blue:#1e3a8a;
+--night:#050a1a;
+--emerald:#0f3d36;
+--accent:#1b6b5c;
+--text:#f2f2f2;
 }
 
+*{margin:0;padding:0;box-sizing:border-box}
+
 body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-background:linear-gradient(180deg,#0c2b24,#071a16);
-color:var(--beige);
+font-family:Inter;
+background:linear-gradient(180deg,var(--night),#02040a);
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* LIGHT */
+.glow{
+position:fixed;
+width:500px;height:500px;
+background:radial-gradient(circle, rgba(15,61,54,0.4), transparent);
+filter:blur(100px);
+pointer-events:none;
+z-index:0;
+transform:translate(-50%,-50%);
 }
 
 /* HERO */
 .hero{
-min-height:100vh;
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-justify-content:center;
-padding:40px;
-}
-
-.hero-text{
-max-width:520px;
-}
-
-h1{
-font-family:'Playfair Display';
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero p{
-opacity:0.8;
-line-height:1.6;
+height:100vh;
+position:relative;
+overflow:hidden;
 }
 
 .hero img{
-width:380px;
-border-radius:20px;
-box-shadow:0 0 50px rgba(0,0,0,0.5);
-margin:20px;
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(0.5);
+transform:scale(1.1);
 }
 
-/* BUTTON */
+.hero-content{
+position:absolute;
+bottom:10%;
+left:8%;
+max-width:700px;
+}
+
+.hero h1{
+font-family:'Playfair Display';
+font-size:80px;
+line-height:1.05;
+}
+
+.hero p{
+margin:20px 0;
+font-size:22px;
+opacity:.85;
+}
+
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:14px 24px;
-background:linear-gradient(45deg,#1e3a8a,#2563eb);
-border-radius:12px;
-color:#fff;
+padding:18px 30px;
+background:linear-gradient(45deg,#0f3d36,#1b6b5c);
+border-radius:16px;
 text-decoration:none;
+color:#fff;
+font-weight:600;
+transition:.4s;
+}
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+/* SECTION */
+.section{
+padding:120px 8%;
+position:relative;
+z-index:2;
+}
+
+/* BIG TEXT */
+.big{
+font-family:'Playfair Display';
+font-size:48px;
+max-width:900px;
+line-height:1.3;
+}
+
+/* SCENE */
+.scene{
+height:80vh;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+margin-top:80px;
+}
+
+.scene img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(0.5);
+}
+
+.scene-text{
+position:absolute;
+bottom:60px;
+left:60px;
+font-size:32px;
+max-width:500px;
+}
+
+/* SERVICES */
+.services{
+margin-top:100px;
+display:grid;
+gap:30px;
+}
+
+.service{
+font-size:24px;
+padding-bottom:10px;
+border-bottom:1px solid rgba(255,255,255,0.2);
+transition:.4s;
+}
+
+.service:hover{
+color:#1b6b5c;
+transform:translateX(15px);
 }
 
 /* NUMBERS */
 .numbers{
 display:flex;
-justify-content:space-around;
-padding:40px;
-background:rgba(255,255,255,0.04);
-text-align:center;
+gap:80px;
+margin-top:100px;
+flex-wrap:wrap;
 }
 
-.number{
-font-size:30px;
-font-weight:600;
-}
-
-/* SECTION */
-.section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-h2{
+.num{
+font-size:56px;
 font-family:'Playfair Display';
-text-align:center;
-margin-bottom:40px;
-}
-
-/* SERVICES */
-.card{
-background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:16px;
-margin-bottom:20px;
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-5px);
-background:rgba(255,255,255,0.08);
 }
 
 /* MAP */
-.map-svg{
+.map{
+margin-top:120px;
+}
+
+.map svg{
 width:100%;
-max-width:900px;
-display:block;
-margin:auto;
-animation:breathe 6s infinite ease-in-out;
+animation:float 7s ease-in-out infinite;
 }
 
 .point{
-fill:#1e3a8a;
-animation:pulse 2s infinite;
+fill:#1b6b5c;
+animation:pulse 2.5s infinite;
 }
 
 @keyframes pulse{
-0%{r:6;}
-50%{r:9;}
-100%{r:6;}
+0%{r:5}
+50%{r:11}
+100%{r:5}
 }
 
-@keyframes breathe{
-0%{transform:scale(1);}
-50%{transform:scale(1.02);}
-100%{transform:scale(1);}
-}
-
-/* CALC */
-input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:10px;
-border:none;
-}
-
-button{
-padding:12px;
-border:none;
-border-radius:10px;
-background:var(--blue);
-color:#fff;
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
 
 /* FOOTER */
 .footer{
+padding:100px 8%;
 text-align:center;
-padding:40px;
-opacity:0.8;
+opacity:.8;
 }
 
 .footer a{
 display:block;
-margin:10px;
-color:var(--beige);
+margin:12px;
+color:var(--text);
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero{
-flex-direction:column;
-text-align:center;
-}
-.hero img{
-width:90%;
-}
-.numbers{
-flex-direction:column;
-gap:20px;
-}
-h1{font-size:32px;}
+.hero h1{font-size:44px}
+.big{font-size:30px}
+.scene-text{font-size:22px;left:20px;bottom:20px}
+.numbers{gap:30px}
 }
 </style>
 </head>
 
 <body>
 
+<div class="glow" id="glow"></div>
+
 <!-- HERO -->
 <section class="hero">
+<img src="foto.jpg">
 
-<div class="hero-text">
+<div class="hero-content">
 <h1>Анжела Погосян</h1>
-<p><strong>Эксперт по недвижимости</strong></p>
-
 <p>
-Вы можете купить квартиру без стресса, ошибок и переплат.  
-Я беру на себя весь процесс: от подбора до ключей.
+Недвижимость — это не покупка.  
+Это стратегия, которая приносит деньги.
 </p>
-
-<p>
-Новостройки • вторичка • инвестиции • зарубежная недвижимость
-</p>
-
-<a href="https://t.me/Angela_Pogosian" class="btn">Разобрать мою ситуацию</a>
+<a href="https://t.me/Angela_Pogosian" class="btn">Получить подборку</a>
 </div>
-
-<img src="foto.jpg" alt="Анжела Погосян">
-
 </section>
 
-<!-- NUMBERS -->
-<div class="numbers">
-<div><div class="number">500+</div>ЖК</div>
-<div><div class="number">200+</div>застройщиков</div>
-<div><div class="number">30+</div>регионов</div>
-<div><div class="number">5+</div>стран</div>
+<!-- TEXT -->
+<section class="section">
+<div class="big">
+Вы можете купить “красивую квартиру”.  
+Или зайти в актив, который будет расти в цене,  
+приносить доход и работать на вас.
 </div>
+</section>
+
+<!-- SCENE -->
+<section class="section">
+<div class="scene">
+<img src="socialhub.jpg">
+<div class="scene-text">
+Закрытые старты.  
+Ниже рынка.  
+Решения, которые делают деньги.
+</div>
+</div>
+</section>
 
 <!-- SERVICES -->
 <section class="section">
-
-<h2>Услуги</h2>
-
-<div class="card">
-<b>Новостройки</b><br>
-Доступ к закрытым предложениям и выгодным условиям от застройщиков
+<div class="services">
+<div class="service">Новостройки — доступ к закрытым предложениям</div>
+<div class="service">Вторичный рынок — полная проверка</div>
+<div class="service">Ипотека — помощь в одобрении</div>
+<div class="service">Сделки под ключ — без вашего участия</div>
 </div>
+</section>
 
-<div class="card">
-<b>Вторичный рынок</b><br>
-Полная проверка и безопасная сделка без рисков
+<!-- NUMBERS -->
+<section class="section">
+<div class="numbers">
+<div class="num">500+ ЖК</div>
+<div class="num">200+ застройщиков</div>
+<div class="num">30+ регионов</div>
+<div class="num">5+ стран</div>
 </div>
-
-<div class="card">
-<b>Ипотека</b><br>
-Помощь в одобрении и подбор лучших условий
-</div>
-
-<div class="card">
-<b>Сделки под ключ</b><br>
-Вы просто принимаете решение — всё остальное делаю я
-</div>
-
 </section>
 
 <!-- MAP -->
-<section class="section">
-
-<h2>География работы</h2>
-
-<svg viewBox="0 0 1000 500" class="map-svg">
-
+<section class="section map">
+<svg viewBox="0 0 1000 500">
 <path d="M50,250 Q200,100 400,200 T800,220 Q900,250 850,350 T500,400 Q300,380 150,320 Z"
 fill="rgba(255,255,255,0.05)"/>
-
-<circle class="point" cx="400" cy="250" r="6"></circle>
-<circle class="point" cx="600" cy="280" r="6"></circle>
-<circle class="point" cx="750" cy="300" r="6"></circle>
-
+<circle class="point" cx="400" cy="250"/>
+<circle class="point" cx="650" cy="260"/>
+<circle class="point" cx="750" cy="300"/>
 </svg>
-
-</section>
-
-<!-- CALC -->
-<section class="section">
-
-<h2>Ипотека</h2>
-
-<p>
-Помогаю получить одобрение и подобрать оптимальные условия.  
-Работаю с банками и застройщиками.
-</p>
-
-<input type="number" id="price" placeholder="Стоимость">
-<input type="number" id="percent" placeholder="Ставка %">
-<input type="number" id="years" placeholder="Срок">
-
-<button onclick="calc()">Рассчитать</button>
-
-<p id="result"></p>
-
-<p style="font-size:12px;">
-Расчет примерный и не является офертой
-</p>
-
-<a href="https://t.me/Angela_Pogosian" class="btn">Написать в Telegram</a>
-
-</section>
-
-<!-- FINAL -->
-<section class="section">
-
-<h2>Готовы выбрать квартиру без ошибок?</h2>
-
-<p style="text-align:center;">
-Напишите мне — разберём вашу ситуацию и подберём лучший вариант
-</p>
-
-<div style="text-align:center;">
-<a href="https://t.me/Angela_Pogosian" class="btn">Написать</a>
-</div>
-
 </section>
 
 <!-- FOOTER -->
-<div class="footer">
+<section class="footer">
+<a href="https://t.me/Angela_Pogosian">Telegram</a>
 <a href="tel:+79381001608">Телефон / WhatsApp</a>
 <a href="https://instagram.com/_anzhelika_359">Instagram</a>
 <p>Москва</p>
-</div>
+</section>
 
 <script>
-function calc(){
-let p=document.getElementById("price").value;
-let r=document.getElementById("percent").value/100/12;
-let n=document.getElementById("years").value*12;
-let pay=(p*r)/(1-Math.pow(1+r,-n));
-document.getElementById("result").innerText="Платеж: "+Math.round(pay)+" ₽/мес";
-}
+const glow=document.getElementById('glow');
+document.addEventListener('mousemove',e=>{
+glow.style.left=e.clientX+'px';
+glow.style.top=e.clientY+'px';
+});
 </script>
 
 </body>
