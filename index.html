@@ -3,228 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Анжела Погосян — эксперт по недвижимости</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+:root{
+--dark:#071426;
+--green:#1e6b5c;
+--blue:#0b2a52;
+--beige:#f5efe6;
+--text:#ffffff;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter;background:#020617;color:#fff}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--dark);
+color:var(--text);
+}
 
 /* HERO */
 .hero{
 height:100vh;
 position:relative;
 display:flex;
-flex-direction:column;
-justify-content:space-between;
-padding:40px 6%;
+align-items:flex-end;
+padding:30px 20px;
+background:url('foto.jpg') center/cover no-repeat;
 }
 
-.hero img{
+.hero::after{
+content:'';
 position:absolute;
-top:0;left:0;
-width:100%;height:100%;
-object-fit:cover;
-filter:brightness(.65);
-z-index:0;
+bottom:0;
+left:0;
+width:100%;
+height:55%;
+background:linear-gradient(to top, rgba(7,20,38,0.95), transparent);
 }
 
-.top{position:relative;z-index:2}
-.tag{font-size:12px;letter-spacing:3px;opacity:.7;margin-bottom:10px}
-
-h1{
-font-family:'Playfair Display';
-font-size:56px;
-line-height:1.1;
-}
-
-/* BOTTOM */
-.bottom{
+.hero-content{
 position:relative;
 z-index:2;
-max-width:520px;
-margin-bottom:40px;
+max-width:500px;
 }
 
-.bottom p{
-font-size:18px;
+.top-title{
+letter-spacing:3px;
+font-size:12px;
+opacity:.7;
+margin-bottom:10px;
+}
+
+h1{
+font-family:'Playfair Display',serif;
+font-size:42px;
+line-height:1.1;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:15px;
+opacity:.9;
 margin-bottom:20px;
-line-height:1.5;
 }
 
 .btn{
-padding:16px 26px;
-border-radius:14px;
-background:linear-gradient(45deg,#0f3d36,#1f7a68);
-color:white;
-text-decoration:none;
+background:linear-gradient(135deg,#1e6b5c,#0b2a52);
+padding:14px 22px;
+border-radius:12px;
 display:inline-block;
-transition:.3s;
+color:#fff;
+text-decoration:none;
+font-weight:500;
+margin-bottom:20px;
 }
 
-.btn:hover{transform:translateY(-3px)}
-
-/* TRUST */
-.trust{
+/* STATS */
+.stats{
 display:flex;
-gap:25px;
-margin-top:25px;
-flex-wrap:wrap;
+justify-content:space-between;
+gap:10px;
+margin-top:10px;
 }
 
-.trust div{font-size:20px;font-weight:600}
-.trust span{display:block;font-size:12px;opacity:.6}
-
-/* SECOND IMAGE */
-.image-block{
-padding:100px 6%;
+.stat{
+text-align:center;
+flex:1;
 }
 
-.image-block img{
+.stat b{
+font-size:18px;
+display:block;
+}
+
+/* SECOND BLOCK */
+.second{
+height:100vh;
+background:url('socialhub.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+padding:20px;
+}
+
+.second::after{
+content:'';
+position:absolute;
 width:100%;
-border-radius:24px;
-box-shadow:0 20px 60px rgba(0,0,0,.5);
+height:100%;
+background:rgba(7,20,38,0.6);
+}
+
+.second-content{
+position:relative;
+z-index:2;
+}
+
+.second h2{
+font-family:'Playfair Display';
+font-size:30px;
+margin-bottom:15px;
+}
+
+.second p{
+max-width:400px;
+margin:auto;
+opacity:.9;
 }
 
 /* SERVICES */
-.section{padding:80px 6%}
+.section{
+padding:60px 20px;
+}
 
-h2{
+.section h2{
 font-family:'Playfair Display';
-font-size:36px;
+font-size:28px;
 margin-bottom:30px;
 }
 
-/* CARDS */
-.cards{
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:15px;
 }
 
 .card{
-padding:25px;
-border-radius:18px;
-background:#f5f0e6;
-color:#1a1a1a;
+background:var(--beige);
+color:#000;
+padding:20px;
+border-radius:14px;
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 15px 40px rgba(0,0,0,.4);
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-.card h3{margin-bottom:10px}
+.card h3{
+margin-bottom:10px;
+}
 
 /* REGIONS */
 .regions{
 display:flex;
 flex-wrap:wrap;
-gap:15px;
+gap:10px;
 }
 
-.region-btn{
-padding:12px 18px;
-border-radius:30px;
-background:#111827;
-cursor:pointer;
-transition:.3s;
-font-size:14px;
-}
-
-.region-btn:hover{
-background:#1f7a68;
-}
-
-/* CALC */
-.calc input{
-width:100%;
-padding:14px;
-margin:10px 0;
+.region{
+border:1px solid rgba(255,255,255,0.2);
+padding:10px 14px;
 border-radius:10px;
-border:none;
-background:#111;
-color:#fff;
-font-size:16px;
+font-size:13px;
 }
 
-.calc button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#1f7a68;
-color:white;
-font-size:16px;
-}
-
-/* SOCIAL */
-.social{
+/* SOCIALS */
+.socials{
 display:flex;
 justify-content:center;
 gap:20px;
-flex-wrap:wrap;
-margin:60px 0;
+margin-top:40px;
 }
 
-.social a{
-padding:16px 26px;
-border-radius:12px;
-color:#fff;
-text-decoration:none;
-font-size:15px;
-font-weight:500;
-transition:.3s;
+.socials a{
+width:50px;
+height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#1e6b5c,#0b2a52);
 }
 
-.social a:hover{
-transform:translateY(-3px);
+svg{
+width:22px;
+height:22px;
+fill:white;
 }
 
 /* MOBILE */
-@media(max-width:768px){
-
-.hero{
-padding:20px;
+@media(max-width:480px){
+h1{font-size:34px}
+.stats{gap:5px}
+.stat b{font-size:16px}
 }
-
-h1{
-font-size:42px;
-}
-
-.bottom p{
-font-size:17px;
-}
-
-.btn{
-width:100%;
-text-align:center;
-font-size:16px;
-padding:18px;
-}
-
-.trust{
-flex-wrap:nowrap;
-justify-content:space-between;
-}
-
-.trust div{
-font-size:16px;
-}
-
-.section{
-padding:60px 20px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 
@@ -232,143 +220,101 @@ grid-template-columns:1fr;
 
 <!-- HERO -->
 <section class="hero">
+<div class="hero-content">
+<div class="top-title">ЭКСПЕРТ ПО НЕДВИЖИМОСТИ</div>
 
-<img src="foto.jpg">
-
-<div class="top">
-<div class="tag">ЭКСПЕРТ ПО НЕДВИЖИМОСТИ</div>
 <h1>Анжела Погосян</h1>
-</div>
 
-<div class="bottom">
 <p>
-Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете, избегаете рисков и получаете максимум выгоды.
+Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете,
+избегаете рисков и получаете максимум выгоды.
 </p>
 
 <a href="https://t.me/Angela_Pogosian" class="btn">Получить подборку</a>
 
-<div class="trust">
-<div>500+<span>ЖК</span></div>
-<div>200+<span>застройщиков</span></div>
-<div>30+<span>регионов</span></div>
-<div>5+<span>стран</span></div>
+<div class="stats">
+<div class="stat"><b>500+</b> ЖК</div>
+<div class="stat"><b>200+</b> застройщиков</div>
+<div class="stat"><b>30+</b> регионов</div>
+<div class="stat"><b>5+</b> стран</div>
 </div>
 </div>
-
 </section>
 
-<!-- SECOND IMAGE -->
-<section class="image-block">
-<img src="socialhub.jpg">
+<!-- SECOND -->
+<section class="second">
+<div class="second-content">
+<h2>Подбор объектов под ваш бюджет</h2>
+<p>
+Я анализирую рынок, отбираю лучшие предложения и даю вам варианты,
+которые реально выгодны — без переплат и скрытых рисков.
+</p>
+</div>
 </section>
 
 <!-- SERVICES -->
 <section class="section">
 <h2>Услуги</h2>
 
-<div class="cards">
+<div class="services">
 
 <div class="card">
 <h3>Новостройки</h3>
-<p>Подбор объектов на стартах продаж, доступ к закрытым предложениям и лучшим ценам от застройщиков.</p>
+<p>Подбор квартир от надежных застройщиков, закрытые старты, спецусловия.</p>
 </div>
 
 <div class="card">
 <h3>Вторичный рынок</h3>
-<p>Покупка и продажа квартир. Полная юридическая проверка и сопровождение. Работа со сложными кейсами, включая альтернативные сделки.</p>
+<p>Покупка, продажа, альтернативные сделки, юридическая проверка.</p>
 </div>
 
 <div class="card">
 <h3>Ипотека</h3>
-<p>Помощь в одобрении, подбор выгодных программ, сопровождение до получения решения банка.</p>
+<p>Одобрение, подбор банка, снижение ставки, сопровождение сделки.</p>
 </div>
 
 <div class="card">
 <h3>Инвестиции</h3>
-<p>Подбор объектов с максимальной доходностью. Анализ рынка, ликвидности и стратегий заработка.</p>
-</div>
-
-<div class="card">
-<h3>Коммерция</h3>
-<p>Подбор объектов под бизнес и инвестиции с расчетом окупаемости.</p>
-</div>
-
-<div class="card">
-<h3>Сделки под ключ</h3>
-<p>Полное сопровождение: от подбора до передачи ключей без вашего участия.</p>
+<p>Подбор объектов с максимальной доходностью и ликвидностью.</p>
 </div>
 
 </div>
-
 </section>
 
 <!-- REGIONS -->
 <section class="section">
-<h2>География</h2>
+<h2>Регионы</h2>
 
 <div class="regions">
-
-<div class="region-btn">Санкт-Петербург</div>
-<div class="region-btn">Краснодарский край</div>
-<div class="region-btn">Сочи</div>
-<div class="region-btn">Республика Адыгея</div>
-<div class="region-btn">Ростов-на-Дону</div>
-<div class="region-btn">Крым</div>
-<div class="region-btn">Ессентуки</div>
-<div class="region-btn">Минеральные Воды</div>
-<div class="region-btn">Кисловодск</div>
-<div class="region-btn">Пятигорск</div>
-<div class="region-btn">Казань</div>
-<div class="region-btn">Новосибирск</div>
-<div class="region-btn">Екатеринбург</div>
-<div class="region-btn">Уфа</div>
-
-<div class="region-btn">ОАЭ</div>
-<div class="region-btn">Армения</div>
-<div class="region-btn">Грузия</div>
-<div class="region-btn">Таиланд</div>
-<div class="region-btn">Бали</div>
-<div class="region-btn">Турция</div>
-
+<div class="region">Москва</div>
+<div class="region">Санкт-Петербург</div>
+<div class="region">Сочи</div>
+<div class="region">Краснодар</div>
+<div class="region">Крым</div>
+<div class="region">Казань</div>
+<div class="region">ОАЭ</div>
+<div class="region">Турция</div>
+<div class="region">Бали</div>
 </div>
-
-</section>
-
-<!-- CALC -->
-<section class="section calc">
-<h2>Ипотечный калькулятор</h2>
-
-<input id="p" placeholder="Стоимость">
-<input id="r" placeholder="Ставка %">
-<input id="y" placeholder="Срок">
-
-<button onclick="calc()">Рассчитать</button>
-
-<p id="res"></p>
-
-<p style="opacity:.6;font-size:12px;margin-top:10px">
-Расчет примерный и не является офертой
-</p>
 
 </section>
 
 <!-- SOCIAL -->
-<div class="social">
+<div class="socials">
 
-<a href="https://t.me/Angela_Pogosian" style="background:#229ED9;">Telegram</a>
+<a href="https://t.me/Angela_Pogosian">
+<svg viewBox="0 0 24 24"><path d="M9.5 15.5l-.4 5c.6 0 .9-.2 1.2-.6l2.8-2.7 5.8 4.2c1 .5 1.7.2 2-.9l3.6-17c.4-1.4-.5-2-1.5-1.6L1.5 10c-1.3.5-1.3 1.3-.2 1.7l5.5 1.7 12.8-8.1c.6-.4 1.2-.2.8.2"/></svg>
+</a>
 
-<a href="tel:+79381001608" style="background:#25D366;">Телефон / WhatsApp</a>
+<a href="tel:+79381001608">
+<svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.6c0 .7-.5 1.2-1.2 1.2C10.3 22 2 13.7 2 3.6 2 2.9 2.5 2.4 3.2 2.4h3.6c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.2 2.2z"/></svg>
+</a>
 
-<a href="https://instagram.com/_anzhelika_359" style="background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);">Instagram</a>
+<a href="https://wa.me/79381001608">
+<svg viewBox="0 0 24 24"><path d="M20 3.5A11 11 0 0 0 3.5 20L2 22l2.5-1.5A11 11 0 1 0 20 3.5z"/></svg>
+</a>
 
 </div>
-
-<script>
-function calc(){
-let pay=(p.value*(r.value/100/12))/(1-Math.pow(1+(r.value/100/12),-y.value*12));
-res.innerText="Платеж: "+Math.round(pay)+" ₽";
-}
-</script>
 
 </body>
 </html>
