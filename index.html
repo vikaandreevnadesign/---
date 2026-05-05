@@ -31,18 +31,8 @@ filter:brightness(.65);
 z-index:0;
 }
 
-/* TOP TEXT */
-.top{
-position:relative;
-z-index:2;
-}
-
-.tag{
-font-size:12px;
-letter-spacing:3px;
-opacity:.7;
-margin-bottom:10px;
-}
+.top{position:relative;z-index:2}
+.tag{font-size:12px;letter-spacing:3px;opacity:.7;margin-bottom:10px}
 
 h1{
 font-family:'Playfair Display';
@@ -50,7 +40,7 @@ font-size:56px;
 line-height:1.1;
 }
 
-/* BOTTOM BLOCK */
+/* BOTTOM */
 .bottom{
 position:relative;
 z-index:2;
@@ -61,7 +51,6 @@ margin-bottom:40px;
 .bottom p{
 font-size:18px;
 margin-bottom:20px;
-opacity:.95;
 }
 
 .btn{
@@ -71,25 +60,27 @@ background:linear-gradient(45deg,#0f3d36,#1f7a68);
 color:white;
 text-decoration:none;
 display:inline-block;
-transition:.3s;
 }
-.btn:hover{transform:translateY(-3px)}
 
-/* TRUST */
 .trust{
 display:flex;
 gap:25px;
 margin-top:25px;
 flex-wrap:wrap;
 }
-.trust div{
-font-size:20px;
-font-weight:600;
+
+.trust div{font-size:20px;font-weight:600}
+.trust span{display:block;font-size:12px;opacity:.6}
+
+/* SECOND IMAGE BLOCK */
+.image-block{
+padding:100px 6%;
 }
-.trust span{
-display:block;
-font-size:12px;
-opacity:.6;
+
+.image-block img{
+width:100%;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 
 /* SERVICES */
@@ -111,21 +102,17 @@ gap:20px;
 .card{
 padding:25px;
 border-radius:18px;
-background:#0b1220;
-border:1px solid rgba(255,255,255,0.08);
+background:#f5f0e6;
+color:#1a1a1a;
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
-border-color:#1f7a68;
-box-shadow:0 0 25px rgba(31,122,104,.3);
+transform:translateY(-6px);
+box-shadow:0 15px 40px rgba(0,0,0,.4);
 }
 
-.card h3{
-margin-bottom:10px;
-font-size:20px;
-}
+.card h3{margin-bottom:10px}
 
 /* REGIONS */
 .regions{
@@ -140,7 +127,6 @@ border-radius:30px;
 background:#111827;
 cursor:pointer;
 transition:.3s;
-font-size:14px;
 }
 
 .region-btn:hover{
@@ -173,13 +159,10 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin-top:40px;
+margin:60px 0;
 }
 
 .social a{
-display:flex;
-align-items:center;
-gap:10px;
 padding:14px 22px;
 border-radius:12px;
 background:#111;
@@ -217,7 +200,7 @@ h1{font-size:36px}
 
 <div class="bottom">
 <p>
-Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете, избегаете рисков и получаете максимальную выгоду.
+Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете, избегаете рисков и получаете максимум выгоды.
 </p>
 
 <a href="https://t.me/Angela_Pogosian" class="btn">Получить подборку</a>
@@ -228,9 +211,13 @@ h1{font-size:36px}
 <div>30+<span>регионов</span></div>
 <div>5+<span>стран</span></div>
 </div>
-
 </div>
 
+</section>
+
+<!-- SECOND IMAGE -->
+<section class="image-block">
+<img src="socialhub.jpg">
 </section>
 
 <!-- SERVICES -->
@@ -241,32 +228,32 @@ h1{font-size:36px}
 
 <div class="card">
 <h3>Новостройки</h3>
-<p>Подбор объектов на стартах продаж и ниже рынка. Работа напрямую с застройщиками.</p>
+<p>Закрытые старты, выгодные входы и реальные инвестиционные предложения.</p>
 </div>
 
 <div class="card">
 <h3>Вторичка</h3>
-<p>Проверка юридической чистоты и подбор ликвидных объектов без рисков.</p>
+<p>Полная проверка и подбор ликвидных объектов без рисков.</p>
 </div>
 
 <div class="card">
 <h3>Ипотека</h3>
-<p>Одобрение, подбор выгодных ставок, работа со сложными случаями.</p>
+<p>Одобрение, снижение ставки и сопровождение до сделки.</p>
 </div>
 
 <div class="card">
 <h3>Сделки под ключ</h3>
-<p>Полное сопровождение — от подбора до получения ключей.</p>
+<p>Полный цикл — от подбора до передачи ключей.</p>
 </div>
 
 <div class="card">
 <h3>Коммерция</h3>
-<p>Подбор объектов с расчетом доходности и окупаемости.</p>
+<p>Подбор объектов с расчетом доходности.</p>
 </div>
 
 <div class="card">
 <h3>Переуступка</h3>
-<p>Безопасные сделки и выгодный вход в инвестиции.</p>
+<p>Выгодный вход и безопасные сделки.</p>
 </div>
 
 </div>
