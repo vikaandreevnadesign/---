@@ -9,11 +9,16 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#061616;color:#fff}
+
+body{
+font-family:'Inter',sans-serif;
+background:#061616;
+color:#fff;
+font-size:18px;
+line-height:1.6;
+}
 
 h1,h2{font-family:'Playfair Display',serif}
-
-.container{width:90%;max-width:1100px;margin:auto}
 
 /* HERO */
 .hero{
@@ -32,6 +37,7 @@ height:100%;
 object-fit:cover;
 top:0;
 left:0;
+filter:brightness(0.75);
 }
 
 .overlay{
@@ -54,36 +60,39 @@ opacity:.9;
 }
 
 .top-text h1{
-font-size:52px;
+font-size:56px;
+margin-top:10px;
 line-height:1.1;
 }
 
 .bottom-content{
 position:relative;
 z-index:2;
-max-width:500px;
+max-width:600px;
 margin-bottom:40px;
 }
 
 .bottom-content p{
-font-size:16px;
+font-size:18px;
 margin-bottom:15px;
 }
 
 .btn{
 display:inline-block;
 background:#1f7a6b;
-padding:14px 20px;
-border-radius:10px;
+padding:16px 24px;
+border-radius:12px;
 color:#fff;
 text-decoration:none;
 margin-bottom:15px;
+font-size:16px;
 }
 
 .stats{
 display:flex;
-gap:15px;
-font-size:13px;
+gap:20px;
+font-size:15px;
+flex-wrap:wrap;
 }
 
 /* SECOND */
@@ -102,20 +111,28 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
+filter:brightness(0.6);
 }
 
 .second .overlay{background:rgba(0,0,0,0.55)}
 
 .second-content{
 position:relative;
-max-width:600px;
+max-width:650px;
 }
 
-.second h2{font-size:28px;margin-bottom:10px}
-.second p{font-size:15px;margin-bottom:15px}
+.second h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.second p{
+font-size:18px;
+margin-bottom:20px;
+}
 
 /* SERVICES */
-.services{padding:60px 0}
+.services{padding:60px 20px}
 
 .cards{
 display:grid;
@@ -126,25 +143,29 @@ gap:20px;
 .card{
 background:#f5efe6;
 color:#111;
-padding:20px;
-border-radius:12px;
+padding:24px;
+border-radius:14px;
 }
 
-.card h3{margin-bottom:10px}
+.card h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:16px;
+}
 
 /* REGIONS */
-.regions{padding:60px 0}
-
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
+.regions{padding:60px 20px}
 
 .region-btn{
 background:#0d2f2c;
-padding:10px 14px;
-border-radius:6px;
+padding:12px 16px;
+border-radius:8px;
+margin:6px;
+display:inline-block;
+font-size:15px;
 }
 
 /* SOCIAL */
@@ -158,11 +179,11 @@ display:inline-flex;
 align-items:center;
 gap:8px;
 margin:10px;
-padding:14px 18px;
-border-radius:10px;
+padding:16px 20px;
+border-radius:12px;
 text-decoration:none;
 color:#fff;
-font-size:14px;
+font-size:15px;
 }
 
 .tg{background:#229ED9}
@@ -172,11 +193,13 @@ font-size:14px;
 
 /* MOBILE */
 @media(max-width:768px){
-.hero{padding:20px}
-.top-text h1{font-size:30px}
-.bottom-content p{font-size:14px}
+body{font-size:16px}
+.top-text h1{font-size:36px}
+.bottom-content p{font-size:16px}
 .cards{grid-template-columns:1fr}
-.stats{font-size:12px}
+.stats{font-size:13px}
+.second h2{font-size:26px}
+.second p{font-size:16px}
 }
 </style>
 </head>
@@ -194,7 +217,9 @@ font-size:14px;
 
 <div class="bottom-content">
 <p>
-Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете, избегаете рисков и получаете максимум выгоды.
+Вы не просто ищете квартиру — вы принимаете одно из самых важных финансовых решений. 
+Я выстраиваю стратегию покупки, при которой вы не переплачиваете, избегаете рисков 
+и получаете максимально выгодный объект.
 </p>
 
 <a href="#" class="btn">Получить подборку</a>
@@ -215,21 +240,21 @@ font-size:14px;
 <div class="second-content">
 <h2>Подбор объектов под ваш бюджет</h2>
 <p>
-Вы не просто смотрите варианты — вы получаете уже отобранные решения. 
-Без неликвида, без скрытых рисков и без переплат.
+Вы получаете уже отобранные варианты без неликвида, без скрытых рисков и без переплат.
+Только те объекты, которые действительно стоит покупать.
 </p>
 <a href="#" class="btn">Получить подборку</a>
 </div>
 </section>
 
-<section class="services container">
-<h2>Услуги</h2>
+<section class="services">
+<h2 style="margin-bottom:20px;">Услуги</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>Новостройки</h3>
-<p>Закрытые старты продаж, лучшие цены, подбор под задачу.</p>
+<p>Закрытые старты продаж, лучшие цены, подбор под ваши цели.</p>
 </div>
 
 <div class="card">
@@ -244,17 +269,16 @@ font-size:14px;
 
 <div class="card">
 <h3>Инвестиции</h3>
-<p>Подбор объектов с высокой доходностью.</p>
+<p>Подбор объектов с максимальной доходностью.</p>
 </div>
 
 </div>
 </section>
 
-<section class="regions container">
-<h2>Регионы</h2>
+<section class="regions">
+<h2 style="margin-bottom:15px;">Регионы</h2>
 
-<div class="buttons">
-  <span class="region-btn">Москва</span>
+<span class="region-btn">Москва и МО</span>
 <span class="region-btn">Санкт-Петербург</span>
 <span class="region-btn">Краснодарский край</span>
 <span class="region-btn">Сочи</span>
@@ -275,7 +299,7 @@ font-size:14px;
 <span class="region-btn">Таиланд</span>
 <span class="region-btn">Бали</span>
 <span class="region-btn">Турция</span>
-</div>
+
 </section>
 
 <section class="social">
