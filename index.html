@@ -10,58 +10,62 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Inter;
-background:#020617;
-color:#fff;
-}
+body{font-family:Inter;background:#020617;color:#fff}
 
 /* HERO */
 .hero{
 height:100vh;
 position:relative;
 display:flex;
-align-items:flex-start;
-padding:80px 8% 0;
-overflow:hidden;
+flex-direction:column;
+justify-content:space-between;
+padding:40px 6%;
 }
 
 .hero img{
 position:absolute;
-right:0;
-top:0;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 object-fit:cover;
-filter:brightness(.7);
+filter:brightness(.65);
+z-index:0;
 }
 
-.hero-content{
+/* TOP TEXT */
+.top{
 position:relative;
 z-index:2;
-max-width:520px;
 }
 
 .tag{
 font-size:12px;
 letter-spacing:3px;
-opacity:.6;
-margin-bottom:15px;
+opacity:.7;
+margin-bottom:10px;
 }
 
-.hero h1{
+h1{
 font-family:'Playfair Display';
-font-size:70px;
-line-height:1.05;
+font-size:56px;
+line-height:1.1;
 }
 
-.hero p{
+/* BOTTOM BLOCK */
+.bottom{
+position:relative;
+z-index:2;
+max-width:520px;
+margin-bottom:40px;
+}
+
+.bottom p{
 font-size:18px;
-margin:20px 0;
-opacity:.9;
+margin-bottom:20px;
+opacity:.95;
 }
 
 .btn{
-padding:16px 28px;
+padding:16px 26px;
 border-radius:14px;
 background:linear-gradient(45deg,#0f3d36,#1f7a68);
 color:white;
@@ -69,20 +73,17 @@ text-decoration:none;
 display:inline-block;
 transition:.3s;
 }
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
+.btn:hover{transform:translateY(-3px)}
 
 /* TRUST */
 .trust{
-margin-top:30px;
 display:flex;
-gap:40px;
+gap:25px;
+margin-top:25px;
 flex-wrap:wrap;
 }
 .trust div{
-font-size:26px;
+font-size:20px;
 font-weight:600;
 }
 .trust span{
@@ -91,55 +92,59 @@ font-size:12px;
 opacity:.6;
 }
 
-/* SECTION */
-.section{
-padding:100px 8%;
-}
+/* SERVICES */
+.section{padding:80px 6%}
 
 h2{
 font-family:'Playfair Display';
-font-size:42px;
-margin-bottom:40px;
+font-size:36px;
+margin-bottom:30px;
 }
 
-/* SERVICES */
-.service{
-border-bottom:1px solid rgba(255,255,255,0.15);
-padding:25px 0;
-cursor:pointer;
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.service-title{
-font-size:22px;
-font-weight:500;
+.card{
+padding:25px;
+border-radius:18px;
+background:#0b1220;
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
 }
 
-.service-content{
-max-height:0;
-overflow:hidden;
-opacity:.85;
-transition:.4s;
-font-size:16px;
-line-height:1.6;
+.card:hover{
+transform:translateY(-5px);
+border-color:#1f7a68;
+box-shadow:0 0 25px rgba(31,122,104,.3);
 }
 
-.service.active .service-content{
-max-height:400px;
-margin-top:12px;
+.card h3{
+margin-bottom:10px;
+font-size:20px;
 }
 
 /* REGIONS */
-.region{margin-bottom:15px;cursor:pointer}
-.region-title{font-size:20px}
-.region-content{
-max-height:0;
-overflow:hidden;
-opacity:.8;
-transition:.4s;
+.regions{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
 }
-.region.active .region-content{
-max-height:300px;
-margin-top:10px;
+
+.region-btn{
+padding:12px 18px;
+border-radius:30px;
+background:#111827;
+cursor:pointer;
+transition:.3s;
+font-size:14px;
+}
+
+.region-btn:hover{
+background:#1f7a68;
 }
 
 /* CALC */
@@ -152,6 +157,7 @@ border:none;
 background:#111;
 color:#fff;
 }
+
 .calc button{
 width:100%;
 padding:14px;
@@ -161,36 +167,24 @@ background:#1f7a68;
 color:white;
 }
 
-/* CTA */
-.cta{
-text-align:center;
-padding:120px 20px;
-}
-
-.cta h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
 /* SOCIAL */
 .social{
 display:flex;
 justify-content:center;
 gap:20px;
-margin-top:30px;
 flex-wrap:wrap;
+margin-top:40px;
 }
 
 .social a{
 display:flex;
 align-items:center;
 gap:10px;
-padding:14px 20px;
+padding:14px 22px;
 border-radius:12px;
 background:#111;
-text-decoration:none;
 color:#fff;
-font-size:14px;
+text-decoration:none;
 transition:.3s;
 }
 
@@ -199,32 +193,12 @@ background:#1f7a68;
 transform:translateY(-3px);
 }
 
-.social svg{
-width:20px;
-fill:white;
-}
-
 /* MOBILE */
 @media(max-width:768px){
-
-.hero{
-padding-top:40px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.trust{
-flex-wrap:nowrap;
-justify-content:space-between;
-gap:10px;
-}
-
-.trust div{
-font-size:16px;
-}
-
+h1{font-size:36px}
+.hero{padding:20px}
+.trust{justify-content:space-between}
+.trust div{font-size:16px}
 }
 </style>
 </head>
@@ -233,16 +207,17 @@ font-size:16px;
 
 <!-- HERO -->
 <section class="hero">
+
 <img src="foto.jpg">
 
-<div class="hero-content">
+<div class="top">
 <div class="tag">ЭКСПЕРТ ПО НЕДВИЖИМОСТИ</div>
-
 <h1>Анжела Погосян</h1>
+</div>
 
+<div class="bottom">
 <p>
-Я не просто подбираю квартиру.  
-Я выстраиваю стратегию покупки, при которой вы не переплачиваете, не рискуете и получаете максимум выгоды из рынка.
+Я выстраиваю стратегию покупки недвижимости, при которой вы не переплачиваете, избегаете рисков и получаете максимальную выгоду.
 </p>
 
 <a href="https://t.me/Angela_Pogosian" class="btn">Получить подборку</a>
@@ -255,87 +230,64 @@ font-size:16px;
 </div>
 
 </div>
+
 </section>
 
 <!-- SERVICES -->
 <section class="section">
 <h2>Услуги</h2>
 
-<div class="service">
-<div class="service-title">Новостройки</div>
-<div class="service-content">
-Подбор объектов на этапе закрытых стартов и до выхода в массовую продажу.  
-Это позволяет купить недвижимость значительно ниже рынка и заработать уже на этапе строительства.  
-Я работаю напрямую с застройщиками и знаю, где реальные выгодные предложения, а где маркетинг.
-</div>
+<div class="cards">
+
+<div class="card">
+<h3>Новостройки</h3>
+<p>Подбор объектов на стартах продаж и ниже рынка. Работа напрямую с застройщиками.</p>
 </div>
 
-<div class="service">
-<div class="service-title">Вторичный рынок</div>
-<div class="service-content">
-Проверяю объект, историю собственников и документы.  
-Вы защищены от скрытых рисков, обременений и проблемных сделок.  
-Помогаю найти не просто вариант, а действительно ликвидную недвижимость.
-</div>
+<div class="card">
+<h3>Вторичка</h3>
+<p>Проверка юридической чистоты и подбор ликвидных объектов без рисков.</p>
 </div>
 
-<div class="service">
-<div class="service-title">Ипотека</div>
-<div class="service-content">
-Помогаю получить одобрение даже в сложных ситуациях.  
-Подбираю банки и программы с минимальной ставкой.  
-Работаю с субсидированными ипотеками и рассрочками от застройщиков.
-</div>
+<div class="card">
+<h3>Ипотека</h3>
+<p>Одобрение, подбор выгодных ставок, работа со сложными случаями.</p>
 </div>
 
-<div class="service">
-<div class="service-title">Сделки под ключ</div>
-<div class="service-content">
-Вы не тратите время и нервы.  
-Я беру на себя весь процесс: подбор, переговоры, проверку, оформление и контроль сделки до получения ключей.
-</div>
+<div class="card">
+<h3>Сделки под ключ</h3>
+<p>Полное сопровождение — от подбора до получения ключей.</p>
 </div>
 
-<div class="service">
-<div class="service-title">Коммерческая недвижимость</div>
-<div class="service-content">
-Подбор объектов под бизнес и инвестиции с расчётом доходности.  
-Анализирую трафик, окупаемость и перспективы роста стоимости.
-</div>
+<div class="card">
+<h3>Коммерция</h3>
+<p>Подбор объектов с расчетом доходности и окупаемости.</p>
 </div>
 
-<div class="service">
-<div class="service-title">Переуступка</div>
-<div class="service-content">
-Провожу безопасные сделки с правами требования.  
-Помогаю купить дешевле рынка или выгодно продать объект на этапе строительства.
+<div class="card">
+<h3>Переуступка</h3>
+<p>Безопасные сделки и выгодный вход в инвестиции.</p>
 </div>
+
 </div>
 
 </section>
 
 <!-- REGIONS -->
 <section class="section">
-<h2>География работы</h2>
+<h2>География</h2>
 
-<div class="region">
-<div class="region-title">Россия</div>
-<div class="region-content">Москва и МО, Санкт-Петербург, Краснодарский край, Крым, ЮФО</div>
-</div>
-
-<div class="region">
-<div class="region-title">ОАЭ</div>
-<div class="region-content">Дубай</div>
-</div>
-
-<div class="region">
-<div class="region-title">Азия</div>
-<div class="region-content">Таиланд, Бали</div>
-</div>
-
-<div class="region">
-<div class="region-title">СНГ / Европа</div>
-<div class="region-content">Грузия, Армения, Турция</div>
+<div class="regions">
+<div class="region-btn">Москва и МО</div>
+<div class="region-btn">Питер</div>
+<div class="region-btn">Краснодар</div>
+<div class="region-btn">Крым</div>
+<div class="region-btn">ОАЭ</div>
+<div class="region-btn">Турция</div>
+<div class="region-btn">Грузия</div>
+<div class="region-btn">Таиланд</div>
+<div class="region-btn">Бали</div>
+<div class="region-btn">Армения</div>
 </div>
 
 </section>
@@ -346,7 +298,7 @@ font-size:16px;
 
 <input id="p" placeholder="Стоимость">
 <input id="r" placeholder="Ставка %">
-<input id="y" placeholder="Срок (лет)">
+<input id="y" placeholder="Срок">
 
 <button onclick="calc()">Рассчитать</button>
 
@@ -355,49 +307,21 @@ font-size:16px;
 <p style="opacity:.6;font-size:12px;margin-top:10px">
 Расчет примерный и не является офертой
 </p>
+
 </section>
 
-<!-- CTA -->
-<section class="cta">
-<h2>Получите подборку объектов под ваш бюджет</h2>
-
-<a href="https://t.me/Angela_Pogosian" class="btn">Написать в Telegram</a>
-
+<!-- SOCIAL -->
 <div class="social">
-
-<a href="https://t.me/Angela_Pogosian">
-<svg viewBox="0 0 24 24"><path d="M9 18l-1-4 9-8-12 6 4 2 7-5-6 6z"/></svg>
-Telegram
-</a>
-
-<a href="tel:+79381001608">
-<svg viewBox="0 0 24 24"><path d="M6 2h4l2 5-3 2c1 2 3 4 5 5l2-3 5 2v4c-10 1-18-7-15-15z"/></svg>
-Позвонить
-</a>
-
-<a href="https://instagram.com/_anzhelika_359">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5"/></svg>
-Instagram
-</a>
-
+<a href="https://t.me/Angela_Pogosian">Telegram</a>
+<a href="tel:+79381001608">Позвонить</a>
+<a href="https://instagram.com/_anzhelika_359">Instagram</a>
 </div>
-</section>
 
 <script>
-
-document.querySelectorAll('.service').forEach(el=>{
-el.onclick=()=>el.classList.toggle('active')
-})
-
-document.querySelectorAll('.region').forEach(el=>{
-el.onclick=()=>el.classList.toggle('active')
-})
-
 function calc(){
 let pay=(p.value*(r.value/100/12))/(1-Math.pow(1+(r.value/100/12),-y.value*12));
 res.innerText="Платеж: "+Math.round(pay)+" ₽";
 }
-
 </script>
 
 </body>
